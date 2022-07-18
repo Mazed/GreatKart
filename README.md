@@ -1,7 +1,7 @@
 # GreatKart
 Django Based Ecommerce Website
 
-to use this code, first install the requirements by run :
+to use this code, first install the requirements on your Virtual Environtment :
 
   pip install -r requirements.txt
 
