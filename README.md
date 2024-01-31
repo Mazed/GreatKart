@@ -1,5 +1,5 @@
 # GreatKart
-Django Based Ecommerce Website
+Django Based Car Shop Website
 
 to use this code, first install the requirements on your Virtual Environtment :
 
