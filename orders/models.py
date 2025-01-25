@@ -11,7 +11,7 @@ class Payment(models.Model):
     payment_method = models.CharField(max_length=100)
     amount_paid = models.CharField(max_length=100)
     status = models.CharField(max_length=100)
-    created_at = models.DateTimeField(datetime.now())
+    created_at = models.DateTimeField(default=datetime.now())
 
     def __str__(self):
         return self.payment_id
@@ -41,8 +41,8 @@ class Order(models.Model):
     status = models.CharField(max_length=10, choices=STATUS, default='New')
     ip = models.CharField(blank=True, max_length=20)
     is_ordered = models.BooleanField(default=False)
-    created_at = models.DateTimeField(datetime.now())
-    updated_at = models.DateTimeField(datetime.now())
+    created_at = models.DateTimeField(default=datetime.now())
+    updated_at = models.DateTimeField(default=datetime.now())
 
     def full_name(self):
         return f'{self.first_name} {self.last_name}'

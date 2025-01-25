@@ -14,8 +14,8 @@ class Product(models.Model):
     stock           = models.IntegerField()
     is_available    = models.BooleanField(default=True)
     category        = models.ForeignKey(Category, on_delete=models.CASCADE)
-    created_date    = models.DateTimeField(datetime.now())
-    modified_date   = models.DateTimeField(datetime.now())
+    created_date    = models.DateTimeField(default=datetime.now())
+    modified_date   = models.DateTimeField(default=datetime.now())
 
     def get_url(self):
         return reverse('product_detail', args=[self.category.slug, self.slug])
@@ -39,7 +39,7 @@ class Variation(models.Model):
     variation_category  = models.CharField(max_length=100, choices=variation_category_choice)
     variation_value     = models.CharField(max_length=100)
     is_active           = models.BooleanField(default=True)
-    created_date        = models.DateTimeField(datetime.now())
+    created_date        = models.DateTimeField(default=datetime.now())
 
     objects = VariationManager()
 
