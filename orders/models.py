@@ -62,8 +62,8 @@ class OrderProduct(models.Model):
     quantity = models.IntegerField()
     product_price = models.FloatField()
     ordered = models.BooleanField(default=False)
-    created_at = models.DateTimeField(datetime.now())
-    updated_at = models.DateTimeField(datetime.now())
+    created_at = models.DateTimeField(default=datetime.now())
+    updated_at = models.DateTimeField(default=datetime.now())
 
     def __str__(self):
         return self.product.product_name
