@@ -1,14 +1,13 @@
 from django.db import models
 from accounts.models import Account
 from store.models import Product, Variation
-from datetime import datetime
-from django.utils.timezone import now
+from django.utils import timezone
 
 # Create your models here.
 
 class Cart(models.Model):
     cart_id     = models.CharField(max_length=250, blank=True)
-    date_added  = models.DateTimeField(now())
+    date_added  = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return self.cart_id
